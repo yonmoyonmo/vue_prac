@@ -1,19 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <p>
+        counter : {{ $store.state.count }} <br />
+        <button @click="add">+</button>
+        <button @click="sub">-</button>
+      </p>
+    </div>
+    <Nav />
+    <Wonmo />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Wonmo from "./components/Wonmo.vue";
+import Nav from "./components/Nav.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Wonmo,
+    Nav,
+  },
+  methods: {
+    add() {
+      this.$store.state.count++;
+    },
+    sub() {
+      this.$store.state.count--;
+    },
+  },
+};
 </script>
 
 <style>
