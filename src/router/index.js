@@ -5,6 +5,11 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "/",
+    name: "dashboard",
+    component: () => import("@/components/MainDashBoard.vue"),
+  },
+  {
     path: "/photo",
     name: "photo",
     component: () => import("@/components/Photo.vue"),
@@ -18,6 +23,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: "history",
+  base: process.env.BASE_URL,
   routes,
 });
 
