@@ -2,6 +2,8 @@
   <div id="app">
     <v-navigation-drawer
       color="#07151E"
+      width="200"
+      fixed
       permanent
       expand-on-hover
       app
@@ -9,8 +11,13 @@
     >
       <v-list nav dense>
         <v-list-item link href="#">
-          <v-list-item-title class="title">Photo</v-list-item-title>
-          <v-list-item-title class="title">Charts</v-list-item-title>
+          <router-link to="/" class="nav-menu">home</router-link>
+        </v-list-item>
+        <v-list-item link href="#">
+          <router-link to="/photo" class="nav-menu">photo</router-link>
+        </v-list-item>
+        <v-list-item link href="#">
+          <router-link to="/charts" class="nav-menu">chart</router-link>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -24,6 +31,7 @@ export default {
 </script>
 
 <style>
-.nav-bar {
+.nav-menu {
+  display: block;
 }
 </style>
